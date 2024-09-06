@@ -1,0 +1,231 @@
+body{
+    margin: 0;
+    padding: 0;
+    background-image: url("/images/base/background.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.book-box{
+    margin: 0 auto;
+    justify-content: center;
+    width: 50%;
+    background-color: lightgray;
+    margin-top: 10px;
+    padding: 10px;
+    border-radius: 5px;
+    box-shadow: 0 0 5px 5px black;
+}
+
+.book-box-header{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+    grid-template-rows: 1fr;
+    column-gap: 10px;
+    padding: 20px;
+    padding-bottom: 5px;
+    height: 200px;
+}
+
+.book-photo{
+    grid-column-start: 2;
+    grid-column-end: 3;
+    grid-row-start: 1;
+    grid-row-end: 2;
+
+    width: 150px;
+    height: 200px;
+
+    box-shadow: 0 0 2px 2px black;
+}
+
+.book-captions{
+    grid-column-start: 3;
+    grid-column-end: 5;
+    grid-row-start: 1;
+    grid-row-end: 1;
+}
+
+.book-categroy{
+    margin: 0px;
+}
+.book-title{
+    margin: 0;
+}
+.book-recomendations{
+    margin-block: 2rem;
+}
+
+.book-description{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+    grid-template-rows: 1fr;
+    text-wrap: wrap;
+}
+
+.book-description-paragraph{
+    grid-column-start: 1;
+    grid-column-end: 6;
+    grid-row-start: 1;
+    grid-row-end: 1;
+    padding: 0 100px;
+    padding-bottom: 0px;
+    
+}
+
+.book-box-buttons{
+    display: grid;
+    padding: 0 20px;
+    grid-template-rows: 1fr;
+    grid-template-columns: 1fr 1fr;
+    justify-items: center;
+}
+.read, .buy{
+    display: flex;
+    justify-content: center;
+    align-items: center ;
+    width: 200px;
+    height: 50px;
+
+    background-color: #293d40;
+    color: #f2f0e6;
+    text-decoration: none;
+    
+    border-radius: 10px;
+}
+
+.form-container{
+    height: 600px;
+    width: 600px;
+    margin: 50px auto;
+    justify-content: center;
+}
+
+form{
+    max-width: 500px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #f9f9f9;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+    box-shadow: 0 0 20px 20px black;
+    
+}
+
+label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: bold;
+}
+button {
+    margin: 20px 0;
+    display: block;
+    padding: 10px 15px;
+    background-color: #007BFF;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+textarea{
+    height: 200px;
+    width: 500px;
+}
+
+#read-recomendation{
+    height: 100px;
+}
+
+input{
+    width: 500px;
+}
+
+.note-container{
+    margin: 0 auto;
+    justify-content: center;
+    width: 50%;
+    background-color: lightgray;
+    margin-top: 10px;
+    padding: 10px;
+    border-radius: 5px;
+    box-shadow: 0 0 5px 5px black;
+}
+
+.note-title{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr 1fr;
+}
+
+.note-title > .image{
+    grid-column-start: 1;
+    grid-column-end: 3;
+    grid-row-start: 1;
+    grid-row-end: 5;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+img{
+    height: 300px;
+    width: 200px;
+    box-shadow: 0 0 3px 3px black;
+}
+.book-info{
+    grid-column-start: 3;
+    grid-column-end: 5;
+    grid-row-start: 1;
+    grid-row-end: 5;
+    display: flexbox;
+    
+}
+
+.recommendation{
+    padding: 0 20px;
+}
+.main-note{
+    padding: 0 20px;
+}
+
+.note-buttons{
+    display: flex;
+    justify-content: space-around;
+    
+}
+
+a{
+    text-decoration: none;
+    color: whitesmoke;
+}
+.modal {
+  display: none;
+  position: fixed; 
+  z-index: 1;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%; 
+  overflow: auto; 
+  background-color: #474e5d;
+  padding-top: 50px;
+}
+
+.delete-header, .delete-paragraph{
+    text-align: center;
+}
+
+.clearfix{
+    display: flex;
+    justify-content: space-around;
+}
+
+.cancel-button{
+    background-color: green;
+}
+.delete-button{
+    background-color: red;
+}

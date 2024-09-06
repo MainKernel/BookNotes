@@ -1,0 +1,29 @@
+.nav-menu{
+    background-color: #E8E8E8;
+    height: 50px;
+    display: grid;
+    grid-template-columns: 2fr 1fr 2fr;
+}
+
+.nav-buttons{
+    grid-column-start: 2;
+    grid-column-end: 2;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.home-btn, .add-btn{
+    text-decoration: none;
+    font-size: 14px;
+    color: #F2F0E6;
+    margin: 0 10px;
+    padding: 10px;
+    width: 120px;
+    height: 20px;
+    background-color: #293D40;
+}
+.home-btn:hover, .add-btn:hover{
+    background-color: #637B7D;
+}

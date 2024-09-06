@@ -1,0 +1,52 @@
+<%- include("templates/header.ejs") %>
+<div class="note-container">
+  <div class="note-title">
+    <div class="image">
+    <img src="/<%= item.book_image %>" alt="Image of <%= item.book_name %>">
+</div>
+    <div class="book-info">
+        <h2 class="book-name"><%= item.book_name %></h2>
+        <h2 class="book-categroy"> <%= item.category %> </h2>
+        <p class="author"> <%= item.book_author %></p>
+        <p class="read-date"> <%= item.read_date %></p>
+        <p class="score"> Recomendation score: <%= item.recomendation_score %> / 10</p>
+    </div>
+    
+  </div>
+  <div class="recommendation">
+    <h2 class="recomendation-paragraph">Read recomendation: </h2>
+    <p class="recomendation-text"><%= item.read_recomendation %></p>
+  </div>
+  <div class="main-note">
+    <h2 class="book-note-header">My notes for the book:</h2>
+    <p class="book-note">
+      <%= item.book_notes %>
+    </p>
+  </div>
+
+  <div class="note-buttons">
+    <button class="note-edit"><a href="/edit/<%=item.id%>">Edit note</a></button>
+    <button class="note-buy"> <a href="<%= item.buy_url %>">Buy a book</a></button>
+    <button class="note-delet" onclick="document.getElementById('delete-modal').style.display='block'">Delete note</button>
+  </div>
+</div>
+<div id="delete-modal" class="modal">
+  <span onclick="document.getElementById('delete-modal').style.display='none'" class="close" title="Close Modal">×</span>
+  <form action="/delete/<%=item.id%>" method="post">
+    <div class="modal-container">
+      <h1 class="delete-header">Delete Note</h1>
+      <p class="delete-paragraph">Are you sure you want to delete your note?</p>
+      <div class="clearfix">
+        <button class="cancel-button" type="button" onclick="document.getElementById('delete-modal').style.display='none'" class="cancelbtn">Cancel</button>
+        <button class="delete-button" type="submit" onclick="document.getElementById('delete-modal').style.display='none'" class="deletebtn">Delete</button>
+      </div>
+    </div></form></div>
+<script>
+  var modal = document.getElementById('delete-modal');
+  window.onclick = function(event) {
+    if (event.target == modal) {
+      modal.style.display = "none";
+    }
+  }
+</script>
+<%- include("templates/footer.ejs") %>

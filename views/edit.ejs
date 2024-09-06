@@ -1,0 +1,38 @@
+<%- include("templates/header.ejs") %>
+
+<div class="form-container">
+    <form action="/edit/<%= item.id %>" method="post">
+
+        <label for="name">Book title:</label>
+        <input type="text" id="name" name="name" value="<%= item.book_name %>" required>
+
+        <label for="author">Book author:</label>
+        <input type="text" id="author" name="author" value="<%= item.book_author%>" >
+
+        <label for="date">Read date:</label>
+        <input type="date" id="date" name="date" value="<%= item.read_date ? new Date(item.read_date).toISOString().split('T')[0] : '' %>" required>
+
+        <label for="score">Recomendation score: </label>
+        <input type="number" id="score" name="score" min="0" max="10" value="<%= item.recomendation_score %>" required>
+
+        <label for="recomendation">Read recomendation:</label>
+        <textarea id="recomendation" name="recomendation"> <%= item.read_recomendation %></textarea>
+
+        <label for="notes">Your book note: </label>
+        <textarea id="notes" name="notes" > <%= item.book_notes %></textarea>
+
+        <label for="url">Where to buy:</label>
+        <input type="url" id="url" name="url" value="<%= item.buy_url%>">
+
+        <label for="category">Category:</label>
+        <select id="category" name="category">
+            <option value="" <%= item.category === '' ? 'selected' : '' %>>Select a category</option>
+            <option value="fiction" <%= item.category === 'fiction' ? 'selected' : '' %>>Fiction</option>
+            <option value="non-fiction" <%= item.category === 'non-fiction' ? 'selected' : '' %>>Non-Fiction</option>
+            <option value="other" <%= item.category === 'other' ? 'selected' : '' %>>Other</option>
+          </select>          
+        <button type="submit">Submit</button>
+      </form>
+</div>
+
+<%- include("templates/footer.ejs") %>

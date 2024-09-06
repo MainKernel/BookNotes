@@ -1,0 +1,31 @@
+<%- include("templates/header.ejs") %>
+
+<% books.forEach(element=> { %>
+<div class="book-box">
+  <div class="book-box-header">
+    <img class="book-photo" src="<%=element.book_image %>" alt="<%=element.book_name %> cover image">
+    <div class="book-captions">
+      <h2 class="book-title">
+        <%= element.book_name %>
+      </h2>
+      <h3 class="book-categroy">Category: <%= element.category %>
+      </h3>
+      <p class="book-read-date">Date read: <%= element.read_date %>
+      </p>
+      <p class="book-recomendations">How strongly I recommend it: <%= element.recomendation_score %> / 10
+      </p>
+    </div>
+  </div>
+  <div class="book-description">
+    <p class="book-description-paragraph">
+      <%= element.read_recomendation %>
+    </p>
+  </div>
+  <div class="book-box-buttons">
+    <a class="read" href="/note/<%= element.id %>">Read my notes</a>
+    <a class="buy" href="<%=element.buy_url%>">Buy book</a>
+  </div>
+</div>
+<% }); %>
+
+<%- include("templates/footer.ejs") %>

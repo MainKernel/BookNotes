@@ -1,0 +1,39 @@
+<%- include("templates/header.ejs") %>
+
+<div class="form-container">
+    <form action="/add" method="post">
+
+        <label for="name">Book title:</label>
+        <input type="text" id="name" name="name" required>
+
+        <label for="author">Book author:</label>
+        <input type="text" id="author" name="author">
+
+        <label for="date">Read date:</label>
+        <input type="date" id="date" name="date" required>
+
+        <label for="score">Recomendation score: </label>
+        <input type="number" id="score" name="score" min="0" max="10" required>
+
+        <label for="recomendation">Read recomendation:</label>
+        <textarea id="recomendation" name="recomendation"></textarea>
+
+        <label for="notes">Your book note: </label>
+        <textarea id="notes" name="notes"></textarea>
+
+        <label for="url">Where to buy:</label>
+        <input type="url" id="url" name="url">
+
+        <label for="category">Category:</label>
+        <select id="category" name="category">
+          <option value="">Select a category</option>
+          <option value="fiction">Fiction</option>
+          <option value="non-fiction">Non-Fiction</option>
+          <option value="other">Other</option>
+        </select>
+        <button type="submit">Submit</button>
+      </form>
+</div>
+
+
+<%- include("templates/footer.ejs") %>
